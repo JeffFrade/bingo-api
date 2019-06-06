@@ -25,6 +25,13 @@ class BingoController extends Controller
         ]);
     }
 
+    public function sorted()
+    {
+        return response()->json([
+            'numbers' => array_flatten($this->bingoRepository->all(['numero'])->toArray())
+        ]);
+    }
+
     public function delete()
     {
         $this->bingo->clearTable();
