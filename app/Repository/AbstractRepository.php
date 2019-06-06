@@ -53,7 +53,7 @@ abstract class AbstractRepository
     {
         return $this->model->destroy($id);
     }
-    
+
     public function customDelete($field, $value)
     {
         return $this->model->where($field, $value)->delete();
